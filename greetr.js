@@ -1,21 +1,21 @@
-// create new execution context
+// create new execution context with an immediately invoked function expression (IIFE)
 (function(global, $) {
     
         // 'new' an object
-        var greetr = function(firstName, lastName, language) {            
-            return new greetr.init(firstName, lastName, language);
+        var Greetr = function(firstName, lastName, language) {
+            return new Greetr.init(firstName, lastName, language);
         }
         
-        // private - hidden within the scope of the IIFE and never directly accessible
+        // hidden within the scope of the IIFE and never directly accessible
         var supportedLangs = ['en', 'es'];
         
-        // private - informal greetings 
+        // informal greetings
         var greetings = {
             en: 'Hello',
             es: 'Hola'
         };
         
-        // private - formal greetings 
+        // formal greetings
         var formalGreetings = {
             en: 'Greetings',
             es: 'Saludos'
@@ -28,7 +28,7 @@
         };
         
         // prototype holds methods (to save memory space)
-        greetr.prototype = {
+        Greetr.prototype = {
             
             // 'this' refers to the calling object at execution time
             fullName: function() {
@@ -129,7 +129,7 @@
         // function constructor
         // the actual object is created here, allowing us to 'new' an object
         // without calling 'new'
-        greetr.init = function(firstName, lastName, language) {
+        Greetr.init = function(firstName, lastName, language) {
             
             var self = this;
             self.firstName = firstName || '';
@@ -140,12 +140,12 @@
         }
         
         // trick borrowed from jQuery so we don't have to use the 'new' keyword
-        greetr.init.prototype = greetr.prototype;
+        Greetr.init.prototype = Greetr.prototype;
         
-        // expose greetr to the outside world
-        // by attaching our greetr to the global object, and provide a 
+        // expose Greetr to the outside world
+        // by attaching our Greetr to the global object, and provide a
         // shorthand '$G' for easy use
-        global.greetr = global.G$ = greetr;
+        global.Greetr = global.G$ = Greetr;
     
     }(window, jQuery)
 );

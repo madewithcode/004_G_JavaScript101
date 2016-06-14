@@ -8,7 +8,7 @@ g.greet().setLang('es').greet(true).log();
 // let's use our object on the click of the login button
 $('#login').click(function() {
    
-    // create a 'new' greetr object 
+    // create a 'new' Greetr object
     // let's pretend we know the name from the login
     var loginGrtr = G$('John', 'Doe');
     
