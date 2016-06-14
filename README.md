@@ -5,7 +5,4 @@ Repo:
 https://github.com/madewithcode/004_G_JavaScript101.git
 
 Web URL:
-
-
-
-
+http://madewithcode.github.io/004_G_JavaScript101/
